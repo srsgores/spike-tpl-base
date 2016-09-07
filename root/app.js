@@ -1,22 +1,23 @@
-const htmlStandards = require('spike-html-standards')
+const htmlStandards = require('reshape-standard')
 const cssStandards = require('spike-css-standards')
-const es2016 = require('babel-preset-es2016')
+const jsStandards = require('babel-preset-latest')
+const pageId = require('spike-page-id')
 
 module.exports = {
   devtool: 'source-map',
   matchers: {
-    html: '**/*.sml',
-    css: '**/*.sss'
+    html: '*(**/)*.sgr',
+    css: '*(**/)*.sss'
   },
-  ignore: ['**/layout.sml', '**/_*', '**/.*'],
+  ignore: ['**/layout.sgr', '**/_*', '**/.*'],
   reshape: (ctx) => {
     return htmlStandards({
       webpack: ctx,
-      locals: { foo: 'bar' }
+      locals: { pageId: pageId(ctx), foo: 'bar' }
     })
   },
   postcss: (ctx) => {
     return cssStandards({ webpack: ctx })
   },
-  babel: { presets: [es2016] }
+  babel: { presets: [jsStandards] }
 }
