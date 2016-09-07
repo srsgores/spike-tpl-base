@@ -1,7 +1,7 @@
-const htmlStandards = require("reshape-standard")
-const cssStandards = require("spike-css-standards")
-const pageId = require("spike-page-id")
-const {UglifyJsPlugin, DedupePlugin, OccurrenceOrderPlugin} = require("webpack").optimize
+const htmlStandards = require("reshape-standard");
+const cssStandards = require("spike-css-standards");
+const pageId = require("spike-page-id");
+const {UglifyJsPlugin, DedupePlugin, OccurrenceOrderPlugin} = require("webpack").optimize;
 
 module.exports = {
 	// disable source maps
@@ -32,4 +32,4 @@ module.exports = {
 			warnForDuplicates: false // cssnano includes autoprefixer
 		})
 	}
-}
+};

@@ -1,7 +1,7 @@
-const htmlStandards = require("reshape-standard")
-const cssStandards = require("spike-css-standards")
-const jsStandards = require("babel-preset-latest")
-const pageId = require("spike-page-id")
+const htmlStandards = require("reshape-standard");
+const cssStandards = require("spike-css-standards");
+const jsStandards = require("babel-preset-latest");
+const pageId = require("spike-page-id");
 
 module.exports = {
 	devtool: "source-map",
@@ -20,4 +20,4 @@ module.exports = {
 		return cssStandards({webpack: ctx})
 	},
 	babel: {presets: [jsStandards]}
-}
+};
