@@ -17,10 +17,10 @@ exports.configure = [
 		type: "confirm",
 		default: true
 	}
-]
+];
 
 exports.after = (util, config) => {
 	if (!config.production) {
 		util.target.remove("app.production.js")
 	}
-}
+};
